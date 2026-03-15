@@ -102,41 +102,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form Submission
-    const contactForm = document.getElementById('contactForm');
-    if(contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const btn = contactForm.querySelector('button[type="submit"]');
-            
-            // Native UI Simulation state
-            const originalText = btn.textContent;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            btn.disabled = true;
-            
-            // Simulate API Call
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fas fa-check"></i> Inquiry Submitted';
-                btn.classList.remove('btn-primary');
-                btn.style.backgroundColor = '#10b981'; // Success green
-                btn.style.borderColor = '#10b981';
-                btn.style.color = '#fff';
-                
-                // Reset form
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                    btn.classList.add('btn-primary');
-                    btn.style.backgroundColor = '';
-                    btn.style.borderColor = '';
-                    btn.style.color = '';
-                }, 3000);
-            }, 1000);
-        });
-    }
 });
