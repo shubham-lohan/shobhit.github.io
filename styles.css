@@ -464,7 +464,7 @@ img {
     max-height: 520px;
     width: 100%;
     object-fit: cover;
-    object-position: top;
+    object-position: center 50%;
 }
 
 .experience-badge {
