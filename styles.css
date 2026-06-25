@@ -2,21 +2,22 @@
    VARIABLES & GLOBAL STYLES
    ========================================= */
 :root {
-    /* Premium Luxury Corporate Palette */
-    --primary-dark: #0F172A;
-    --secondary-dark: #1E2A44;
+    /* Modern Professional Blue Palette */
+    --primary-dark: #1A365D;
+    --secondary-dark: #2A4365;
     
-    --bg-main: #F8F5EF;
-    --bg-alt: #F3EFE7;
-    --bg-card: #FCFAF6;
+    --bg-main: #FFFFFF;
+    --bg-alt: #F4F7FB;
+    --bg-card: #FFFFFF;
     
-    --text-primary: #1C1C1C;
-    --text-secondary: #5E6673;
+    --text-primary: #1E293B;
+    --text-secondary: #475569;
     
-    --accent-premium: #C2A878;
-    --accent-gold-dark: #A88A5A;
+    --accent-premium: #3C72B8;
+    --accent-light: #8AABD4;
+    --accent-gold-dark: #2B5282;
     
-    --border-color: #D9D2C7;
+    --border-color: #E2E8F0;
     
     /* Typography */
     --font-heading: 'Playfair Display', serif;
@@ -177,6 +178,18 @@ img {
     border-color: var(--primary-dark);
 }
 
+.btn-accent {
+    background-color: var(--accent-premium);
+    color: var(--bg-main);
+    border-color: var(--accent-premium);
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-gold-dark);
+    border-color: var(--accent-gold-dark);
+    color: var(--bg-main);
+}
+
 .btn-block {
     display: block;
     width: 100%;
@@ -190,24 +203,22 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     z-index: 1000;
     transition: var(--transition);
-    background-color: transparent;
-    border-bottom: 1px solid rgba(217, 210, 199, 0.15);
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar.scrolled {
-    background-color: var(--bg-card);
-    padding: 1rem 0;
-    box-shadow: var(--shadow-sm);
-    border-bottom: 1px solid var(--border-color);
+    padding: 0.8rem 0;
 }
 
 .navbar.scrolled .logo-brand,
 .navbar.scrolled .nav-link,
 .navbar.scrolled .nav-toggle {
-    color: var(--primary-dark);
+    /* No longer needed since background is always solid */
 }
 
 .nav-container {
@@ -217,21 +228,15 @@ img {
 }
 
 .logo-brand {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: var(--bg-main);
-    font-style: italic;
     transition: var(--transition);
-    text-decoration: none;
     display: inline-block;
 }
 
-.logo-brand span {
-    color: var(--accent-premium);
-    font-style: normal;
-    margin: 0 0.2rem;
+.logo-brand img {
+    height: 48px;
+    width: auto;
+    display: block;
+    mix-blend-mode: multiply;
 }
 
 .navbar.scrolled .nav-link:hover {
@@ -239,8 +244,7 @@ img {
 }
 
 .navbar.scrolled .btn-nav {
-    border-color: var(--primary-dark);
-    color: var(--primary-dark) !important;
+    /* No changes needed */
 }
 
 .nav-menu {
@@ -255,10 +259,11 @@ img {
 }
 
 .nav-link {
-    color: var(--bg-main);
-    font-weight: 400;
-    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
     letter-spacing: 0.5px;
+    transition: var(--transition);
 }
 
 .nav-link:hover {
@@ -266,21 +271,22 @@ img {
 }
 
 .btn-nav {
-    border: 1px solid rgba(255,255,255,0.4);
+    border: 1px solid var(--primary-dark);
     padding: 0.5rem 1.4rem;
     border-radius: var(--border-radius);
-    color: var(--bg-main) !important;
+    color: var(--primary-dark) !important;
+    transition: var(--transition);
 }
 
 .btn-nav:hover {
-    background-color: var(--accent-premium);
-    color: var(--primary-dark) !important;
-    border-color: var(--accent-premium) !important;
+    background-color: var(--primary-dark);
+    color: var(--bg-main) !important;
+    border-color: var(--primary-dark) !important;
 }
 
 .nav-toggle {
     display: none;
-    color: var(--bg-main);
+    color: var(--primary-dark);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -320,13 +326,13 @@ img {
 
 .hero-subtitle {
     display: inline-block;
-    color: var(--accent-premium);
+    color: var(--accent-light);
     font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 2rem;
-    border-bottom: 1px solid var(--accent-premium);
+    border-bottom: 1px solid var(--accent-light);
     padding-bottom: 0.5rem;
 }
 
@@ -353,9 +359,9 @@ img {
 }
 
 .hero .btn-primary {
-    background-color: var(--accent-premium);
+    background-color: var(--accent-light);
     color: var(--primary-dark);
-    border-color: var(--accent-premium);
+    border-color: var(--accent-light);
 }
 
 .hero .btn-primary:hover {
@@ -403,7 +409,7 @@ img {
 }
 
 .strip-divider {
-    color: var(--accent-premium);
+    color: var(--accent-light);
     font-weight: 300;
     font-size: 1rem;
 }
@@ -489,7 +495,7 @@ img {
 .badge-sub {
     font-family: var(--font-body);
     font-size: 0.85rem;
-    color: var(--accent-premium);
+    color: var(--accent-light);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -572,7 +578,7 @@ img {
 .service-num {
     font-family: var(--font-heading);
     font-size: 4rem;
-    color: var(--border-color);
+    color: var(--accent-premium);
     line-height: 0.8;
 }
 
@@ -638,7 +644,7 @@ img {
 
 .feature-list i {
     font-size: 1.2rem;
-    color: var(--accent-premium);
+    color: var(--accent-light);
     margin-top: 0.4rem;
 }
 
@@ -669,7 +675,7 @@ img {
     color: var(--bg-alt);
     line-height: 1.4;
     font-style: italic;
-    border-left: 1px solid var(--accent-premium);
+    border-left: 1px solid var(--accent-light);
     padding-left: 2rem;
 }
 
@@ -970,10 +976,10 @@ img {
    FOOTER
    ========================================= */
 .footer {
-    background-color: var(--primary-dark);
-    color: rgba(255,255,255,0.6);
+    background-color: var(--bg-alt);
+    color: var(--text-secondary);
     padding-top: 6rem;
-    border-top: 1px solid var(--accent-premium);
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-container {
@@ -981,7 +987,7 @@ img {
     grid-template-columns: 2fr 1fr 1.5fr;
     gap: 5rem;
     padding-bottom: 4rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .footer-brand p {
@@ -996,25 +1002,25 @@ img {
     justify-content: center;
     width: 45px;
     height: 45px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid var(--border-color);
     border-radius: 50%;
-    color: var(--bg-main);
+    color: var(--primary-dark);
     margin-right: 1rem;
     transition: var(--transition);
 }
 
 .social-links a:hover {
     border-color: var(--accent-premium);
-    color: var(--primary-dark);
+    color: var(--bg-main);
     background-color: var(--accent-premium);
 }
 
 .footer h4 {
-    color: var(--bg-main);
+    color: var(--text-primary);
     font-family: var(--font-heading);
     font-size: 1.2rem;
     margin-bottom: 1.8rem;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .footer-links ul li {
@@ -1022,8 +1028,8 @@ img {
 }
 
 .footer-links a {
-    color: rgba(255,255,255,0.6);
-    font-weight: 300;
+    color: var(--text-secondary);
+    font-weight: 400;
 }
 
 .footer-links a:hover {
@@ -1195,7 +1201,23 @@ img {
     }
 
     .credibility-strip {
+        padding: 1.5rem 1rem;
+    }
+    
+    .strip-container {
+        gap: 0.8rem;
+    }
+    
+    .strip-divider {
         display: none;
+    }
+    
+    .strip-item {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
     }
 
     .hero h1 {
